@@ -1,0 +1,445 @@
+html,body,.main, ul {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    z-index: 2;
+    position: relative;
+
+    a {
+        display: inline-block;
+        vertical-align: middle;
+        text-indent: -5000px;
+        width: 110px;
+        height: 110px;
+        background: url(../img/logo_disko.png) no-repeat;
+        background-size: (220px/2) (220px/2);
+        margin-left: -78px;
+        margin-right: 23px;
+    }
+
+    h1 {
+        margin: 0;
+        padding: 60px 0;
+        vertical-align: middle;
+        display: inline-block;
+        letter-spacing: -0.5px;
+        text-transform: uppercase;
+        color: $color-main;
+        text-align: left;
+
+        span {
+            font: 400 20px/12px $font-corps;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            color: $color-main-lite;
+        }
+    }
+
+    .burger {
+        display: none;
+        cursor: pointer;
+    }
+}
+
+nav {
+    text-align: center;
+    height: 44px;
+    background-color: #000;
+    z-index: 1;
+
+    ul {
+
+        li {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+
+
+            a {
+                text-decoration: none;
+                padding: 10px 13px;
+                color: #FFF;
+                font: 400 20px/22px $font-corps;
+                text-transform: uppercase;
+                display: block;
+                transition: color .4s;
+
+                &:hover {
+                    color:$color-main-lite;
+                }
+            }
+
+            & + li::before {
+                content: '';
+                position: absolute;
+                height: 14px;
+                width: 1px;
+                left: -4px;
+                top: 15px;
+                background-color: $color-main-lite;
+            }
+        }
+    }
+}
+
+.main {
+    overflow: hidden;
+    position: relative;
+
+    ul {
+        position: relative;
+        width: 300%;
+        height: 100%;
+        background-color: #F0F;
+
+        li {
+            position: absolute;
+            width: calc( 100% / 3);
+            height: 100%;
+            background-color: #0FF;
+
+            &:nth-of-type(1) {
+                background-color: #000;
+                background-image: url('../img/red-panda.jpg');
+                background-size: cover;
+                background-position: right;
+                color:#FFF;
+
+                p {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    background-color: rgba(0,0,0,0.4);
+                    padding: 15px 15px 50px 15px;
+                    font-size: 20px;
+                    line-height: 26px;
+                    font-family: 'helvetica';
+                }
+            }
+
+            &:nth-of-type(2) {
+                background-color: #aaaaaa;
+            }
+
+            &:nth-of-type(3) {
+                background-color: #FFF;
+                color:#000;
+                padding: 40px;
+
+                form {
+                    width: 300px;
+                    margin: auto;
+
+                    .field {
+                        padding: 20px 0;
+
+                        label {
+                            display: block;
+                            margin-bottom: 5px;
+                        }
+
+                        button {
+                            line-height: 30px;
+                            border-radius: 4px;
+                            box-shadow: 0px 0px 0px 0px #fff;
+                            border: solid 1px #aaa;
+                            background-color: #EEE;
+                            transition: all 0.4s;
+
+                            &:hover {
+                                background-color: $color-main-lite;
+                                color: #FFF;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .slide-to-left, .slide-to-right {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: $color-main;
+        opacity: 0.8;
+        bottom: 0;
+        z-index: 1;
+        text-indent: -5000px;
+
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 10px;
+            background-color: #FFF;
+            z-index: 1;
+        }
+
+        &::before {
+            left: 25px;
+            top: 24px;
+        }
+
+        &::after {
+            left: 25px;
+            top: 18px;
+        }
+    }
+
+    .slide-to-left {
+        left: 0;
+
+        &::before {
+            -ms-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+
+        &::after {
+            -ms-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+
+    .slide-to-right {
+        right: 0;
+
+        &::before {
+            -ms-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            -ms-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+    }
+
+    .pedo {
+        position: relative;
+        bottom: 0;
+
+        .pedo-say {
+            bottom: 140px;
+            display: none;
+            left: 60px;
+            position: absolute;
+            width: 150px;
+            height: 40px;
+            background-color: #FFF;
+            border: solid 1px black;
+            border-radius: 5px;
+            padding: 8px;
+            font-size: 18px;
+            line-height: 20px;
+
+            .first-line {
+                position: absolute;
+                opacity: 0;
+            }
+
+            .second-line {
+                position: absolute;
+                opacity: 0;
+            }
+        }
+
+        .big-pedo {
+            position: absolute;
+            bottom: -130px;
+            left: 50px;
+            display: none;
+        }
+
+        .unicorn {
+            position: absolute;
+            bottom: -250px;
+            left: 250px;
+            display: none;
+        }
+    }
+}
+
+footer {
+
+    .mention {
+        padding: 10px 0;
+        background-color: #000;
+        color: #FFF;
+        font-family: 'arial';
+        font-size: 10px;
+        text-align: center;
+    }
+}
+
+#mon_canvas {
+    z-index: 2;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+
+@media (min-width:$tablet) {
+
+}
+@media (min-width:$mobile) and (max-width:$tablet) {
+
+    header {
+
+        h1 {
+            padding: 40px 0;
+            font: 400 22px/20px $font-corps;
+
+            span {
+                font: 400 20px/12px $font-corps;
+            }
+        }
+    }
+
+    nav {
+
+        ul {
+
+            li {
+
+                a {
+                    font: 400 16px/22px $font-corps;
+                }
+            }
+        }
+    }
+
+}
+@media (max-width:$mobile) {
+
+    header {
+        text-align: left;
+        padding: 15px;
+        background-color: #FFF;
+
+        a {
+            text-indent: -5000px;
+            width: 55px;
+            height: 55px;
+            background: url(../img/logo_disko.png) no-repeat;
+            background-size: (220px/4) (220px/4);
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        h1 {
+            margin: 0 50px 0 0;
+            padding: 15px 0;
+            font: 400 22px/20px $font-corps;
+
+            span {
+                font: 400 16px/12px $font-corps;
+            }
+        }
+
+        .burger {
+            display: block;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            text-indent: -5000px;
+            width: 25px;
+            height: 30px;
+
+            span {
+                position: absolute;
+                width: 25px;
+                height: 4px;
+                background-color: #000;
+                display: block;
+
+                &:nth-of-type(1) {
+                    top: 0px;
+                    left: 0;
+                }
+
+                &:nth-of-type(2) {
+                    top: 8px;
+                    left: 0;
+                }
+
+                &:nth-of-type(3) {
+                    top: 16px;
+                    left: 0;
+                }
+            }
+        }
+    }
+
+    .main {
+
+        ul {
+
+            li {
+
+                &:nth-of-type(1) {
+
+                    p {
+                        font-size: 18px;
+                        line-height: 20px;
+                        padding-bottom: 60px;
+                    }
+                }
+
+                &:nth-of-type(3) {
+                    padding: 15px;
+
+                    h2 {
+                        margin: 0;
+                    }
+
+                    form {
+
+                        .field {
+                            padding-bottom: 0;
+                            padding-top: 15px;
+                            width: calc( 100% - 30px );
+
+                            button {
+                                margin-left: 140px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    nav {
+        height: auto;
+        position: absolute;
+        width: 100%;
+
+        ul {
+
+            li {
+                display: inline;
+
+                a {
+                    font: 400 16px/22px $font-corps;
+                }
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+}

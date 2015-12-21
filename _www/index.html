@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="sass/normalize.css" />
+    <link rel="stylesheet" href="sass/main.css" />
+    <link rel="icon" href="favicon.ico" type="image/png">
+    <title>Test Frontend Disko</title>
+  </head>
+  <body>
+
+
+<header>
+    <a href="#">Disko Agency</a>
+
+    <h1>Bienvenue sur le test Frontend de DISKO </br><span>Allez c’est pas bien méchant</span></h1>
+    <div class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+<nav>
+    <ul>
+        <li><a href="#" data-index="0">intro</a></li>
+        <li><a href="#" data-index="1">slide 1</a></li>
+        <li><a href="#" data-index="2">slide 2</a></li>
+    </ul>
+</nav>
+<div class="main">
+    <ul>
+        <li class='select' data-index="0">
+            <p>
+                Hey, i'm Thibaut.</br> I'm 30' and i come from Elsass !
+            </p>
+        </li>
+        <li data-index="1">
+            <canvas id="mon_canvas" width="500" height="500">
+              Texte alternatif pour les navigateurs ne supportant pas Canvas.
+            </canvas>
+        </li>
+        <li data-index="2">
+
+            <h2>Contact</h2>
+            <div id="form-messages"></div>
+
+      		<form id="ajax-contact" method="post" action="scripts/mailer.php">
+      			<div class="field">
+      				<label for="name">Name:</label>
+      				<input type="text" id="name" name="name" required>
+      			</div>
+
+      			<div class="field">
+      				<label for="email">Email:</label>
+      				<input type="email" id="email" name="email" required>
+      			</div>
+
+      			<div class="field">
+      				<label for="message">Message:</label>
+      				<textarea id="message" name="message" required></textarea>
+      			</div>
+
+      			<div class="field">
+      				<button type="submit">Send</button>
+      			</div>
+      		</form>
+        </li>
+    </ul>
+    <a class="slide-to-left" href="#">left</a>
+    <a class="slide-to-right" href="#">right</a>
+    <div class="pedo">
+        <div class="pedo-say">
+            <p class="first-line">
+                Want to see my unicorn ?
+            </p>
+            <p class="second-line">
+                Sorry.....
+            </p>
+        </div>
+        <img class="big-pedo" src="img/bear.png" alt="" />
+        <img class="unicorn" src="img/unicorn.png" alt="" />
+    </div>
+</div>
+<footer>
+    <div class="mention">
+        <p>
+            © 2015 Disko, Tous Droits Réservés car on est cool
+        </p>
+    </div>
+</footer>
+
+
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/TweenMax.min.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+  </body>
+</html>
